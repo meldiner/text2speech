@@ -99,8 +99,17 @@ def main():
             # Update the timestamp
             last_frame_time = time.time()
 
-        # Exit if the 'q' key is pressed
-        if cv2.waitKey(1) & 0xFF == ord('q'):
+        # Check for key press events
+        key = cv2.waitKey(1) & 0xFF
+
+        # If the spacebar is pressed, save the image to disk
+        if key == ord(' '):
+            img_name = f"images/opencv_frame_{time.time()}.png"
+            cv2.imwrite(img_name, frame)
+            print(f"{img_name} saved!")
+
+        # If the 'q' key is pressed, exit the loop
+        elif key == ord('q'):
             break
 
     # Release resources
