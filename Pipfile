@@ -5,6 +5,10 @@ name = "pypi"
 
 [packages]
 pyttsx3 = "*"
+opencv-python = "*"
+pytesseract = "*"
+gtts = "*"
+pygame = "*"
 
 [dev-packages]
 
